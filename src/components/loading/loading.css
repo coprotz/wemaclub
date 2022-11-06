@@ -1,0 +1,45 @@
+.loading_wrapper{
+    width: 15px;
+    height: 15px;
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    aspect-ratio: 1;
+}
+
+.loading::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    aspect-ratio: 1;
+    border: 3px solid #e0edff;
+    border-top-color: #0d366b;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+    
+}
+
+.loading_page{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+}
+
+@keyframes loading{
+    to{
+        transform: rotate(1turn);
+    }
+}

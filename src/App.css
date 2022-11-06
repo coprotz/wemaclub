@@ -2,10 +2,263 @@
   text-align: center;
 }
 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h4,h5,h3,h1,h2{
+  margin: 0;
+  padding: 0;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+.home_wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: cornflowerblue;
+}
+
+.room_wrapper{
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: cornflowerblue;
+}
+
+.room_members{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.app_name{
+  padding: 15px;
+  color: darkblue;
+  font-weight: 800;
+}
+
+.wema_card_outer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wema_card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column;    */
+  width: 85px;
+  height: 85px;
+  /* border: 1px solid red; */
+  position: relative;
+ 
+  
+}
+
+.wema_card_grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  gap: 15px;
+  width: 80%;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  height: calc(100vh - 120px);
+  overflow-y: scroll;
+}
+
+.wema_username{
+  width: 65px;
+  height: 65px;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  background-color: #952ef6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 800;
+  position: relative;
+}
+
+/* .wema_speaker{
+  position: absolute;
+  right: -15px;
+  bottom: -15px;
+} */
+
+.wema_photo{
+  width: 115px;
+  height: 115px;
+  font-size: 3rem;
+  font-weight: 800;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.input{
+  border: none;
+  /* background-color: rgba(255,255,255,0.2); */
+  width: 100%;
+  padding: 15px;
+  font-size: 1.3rem;
+  color: black;
+  border-radius: 25px;
+}
+
+.chat_layout{
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat_input{
+  padding: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  outline: none;
+  border-radius: 15px;
+  border: none;
+}
+
+.send_name{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+  color: white;
+  border-radius: 50%;
+}
+
+.message_card{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.chat_feed{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  /* border: 1px solid red; */
+  background-color: rgb(150, 184, 247);
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+}
+
+.btn_chat{
+  background-color: white;
+  padding: 9px 15px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+
+.user_count{
+  display: flex;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+
+.select{
+  border: none;
+  /* background-color: black; */
+  width: 100%;
+  padding: 15px;
+  font-size: 1.3rem;
+  /* color: white; */
+  border-radius: 25px;
+}
+
+.join_wrapper{  
+  min-height: 100vh;
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.join_inner{
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 15px 0;
+}
+
+.join_details{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+
+.join_details h4{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+.btn{
+  background-color: rgb(9, 9, 74);
+  color: white;
+  font-size: 1.1rem;
+  padding:  20px;
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.btn_btn{
+  position: absolute;
+  background-color: white;  
+  font-size: 1.1rem;  
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  right: -15px;
+  bottom: 5px;
+}
+
+/* .relative{
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border: 1ps solid red;
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -34,5 +287,78 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+.footer_wrapper{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 15px;
+}
+
+.btn_leave{
+  border: none;
+  background-color: red;
+  padding: 9px 13px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  color: white;
+}
+
+.rounded-full{
+  border: none;
+  font-size: 1.5rem;
+  height: 40px;
+  width: 40px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+
+.bg-brand-100{
+  border: none;
+  font-size: 1.5rem;
+  height: 40px;
+  width: 40px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkblue;
+}
+
+/* .bg-red-600{
+  background-color: red;
+} */
+
+
+@media screen and (max-width: 940px){
+  .wema_card{
+  
+    width: 90%;
+    
+  }
+
+  .chat_layout{
+    width: 90%;
+  
+  }
+
+  .wema_card_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 80px);
+    /* gap: 15px; */
+    width: 90%;
+    /* margin-top: 5px; */
+    /* margin: 0 auto; */
+    /* border: 1px solid red; */
+    height: calc(100vh - 120px);
+    overflow-y: scroll;
   }
 }

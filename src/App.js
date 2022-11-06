@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import {
+  HMSRoomProvider,
+  useHMSStore,
+  selectIsConnectedToRoom,
+} from '@100mslive/hms-video-react';
+import Join from './components/Join';
+import Room from './components/Room';
 import './App.css';
+
+const SpacesApp = () => {
+  const isConnected = useHMSStore(selectIsConnectedToRoom);
+  return <>{isConnected ? <Room /> : <Join />}</>;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HMSRoomProvider>
+      <div className='page'>
+        <SpacesApp />
+      </div>
+    </HMSRoomProvider>
   );
 }
 
 export default App;
+
